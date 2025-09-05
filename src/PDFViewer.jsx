@@ -21,7 +21,7 @@ export default function PdfViewer() {
       {/* PDF Viewer */}
       <div className="listcontainer">
         <iframe
-          src={`/assets/documents/${item.id}.pdf`}
+          src={`/assets/calendar/${item.id}.pdf`}
           width="100%"
           height="492px"
           title={item.name}

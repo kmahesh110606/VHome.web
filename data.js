@@ -48,12 +48,12 @@ export const apps = [
         description: "Tool to calculate GPA and CGPA."
     },
     {
-        id: "Library",
+        id: "library",
         name: "Library",
         url: "https://library.vit.ac.in/",
     },
     {
-        id: "WebCC",
+        id: "webcc",
         name: "WebCC",
         url: "https://webcc.vit.ac.in/",
         description: "STS Exam Link"
