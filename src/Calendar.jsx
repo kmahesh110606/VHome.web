@@ -8,7 +8,7 @@ export default function AcademicCalendar() {
       {calendar.map(item => (
         <Link
           key={item.id}
-          to={`/academiccalendar/${item.id}`}
+          to={`/calendar/${item.id}`}
           className="quicklink-item"
         >
           <div className="quicklink-item text">{item.name}</div>

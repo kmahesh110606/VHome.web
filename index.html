@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VHome</title>
   </head>
+
+  <script>
+  if (!location.hash && location.pathname !== "/") {
+    location.replace("/");
+  }
+  </script>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
