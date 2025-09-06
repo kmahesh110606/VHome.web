@@ -98,6 +98,10 @@ export const examschedle = [
     {
         id: "fs25fat",
         name: "Fall Semester 2025-26 FAT Schedule"
+    },
+    {
+        id: "fintra25",
+        name: "Fall Intra-Weekend Semester Schedule"
     }
 ];
 

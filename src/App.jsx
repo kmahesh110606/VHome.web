@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import AcademicCalendar from './AcademicCalendar';
-import PdfViewer from './PDFViewer';
+import Calendar from './Calendar';
+import PDFViewer from './PDFViewer';
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<div>Home Page</div>} />
-      <Route path="/calendar" element={<AcademicCalendar />} />
-      <Route path="/calendar/:id" element={<PdfViewer />} />
-      <Route path="/examschedule" element={<AcademicCalendar />} />
-      <Route path="/examschedule/:id" element={<PdfViewer />} />
+      <Route path="/calendar" element={<Calendar />} />
+      <Route path="/calendar/:id" element={<PDFViewer />} />
+      <Route path="/examschedule" element={<Calendar />} />
+      <Route path="/examschedule/:id" element={<PDFViewer />} />
       <Route path="/all" element={<div>All Apps Page</div>} />
       <Route path="/about" element={<div>About Page</div>} />
       <Route path="/privacy" element={<div>Privacy Policy Page</div>} />
