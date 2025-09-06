@@ -90,7 +90,7 @@ export const apps = [
     }
 ];
 
-export const examschedle = [
+export const examschedule = [
     {
         id: "fs25cat",
         name: "Fall Semester 2025-26 CAT Schedule"
@@ -100,22 +100,22 @@ export const examschedle = [
         name: "Fall Semester 2025-26 FAT Schedule"
     },
     {
-        id: "fintra25",
-        name: "Fall Intra-Weekend Semester Schedule"
+        id: "fs25intra",
+        name: "Fall Semester 2025-26 Intra-Weekend Semester Schedule"
     }
 ];
 
 export const calendar = [
     {
-        id: "fs25",
+        id: "fs25seniorexceptlaw",
         name: "Fall Semester 2025-26 Academic Calendar"
     },
     {
-        id: "fintra25", 
-        name: "Fall Intra-Weekend Semester 2025-26 Academic Calendar"
+        id: "fs25intra", 
+        name: "Fall Semester Intra-Weekend 2025-26 Academic Calendar"
     },
     {
-        id: "ws25",
-        name: "Winter Semester 2025-26 Academic Calendar"
+        id: "vitol25",
+        name: "VITOL OC 2025-26 Time Schedule"
     }
 ];
