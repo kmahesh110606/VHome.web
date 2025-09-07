@@ -18,7 +18,7 @@ export const apps = [
         description: "Portal for accessing Quizzes and Materials for Non-Graded Courses"
     },
     {
-        id: "lms",
+        id: "moodle",
         name: "LMS",
         url: "https://lms.vit.ac.in/my/",
         description: "Assignment submissions and Quizzes (formerly Moodle)"
