@@ -30,7 +30,7 @@ export const apps = [
         description: "VIT Chennai's very own helpdesk for solving all your problems."
     },
     {
-        id: "ffcs",
+        id: "registrations",
         name: "Registration",
         url: "https://vtopregcc.vit.ac.in/",
         description: "FFCS Course and Timetable Selection, Feedback, Hostel Registration."
