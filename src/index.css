@@ -72,3 +72,22 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.gradient-underline {
+  /* create a thick gradient underline */
+  box-shadow: inset 0 -4px 40px 0 linear-gradient(to right, #7e22ce, #ef4444);
+}
+
+/* Unfortunately, box-shadow does not support gradient directly, so you can do a workaround using a pseudo element */
+
+.gradient-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* thickness */
+  border-radius: 9999px; /* same as rounded-full */
+  background: linear-gradient(to right, #7e22ce, #ef4444);
+  box-shadow: 0 0 40px #7e22ce;
+}
