@@ -1,22 +1,20 @@
 // src/pages/ExamSchedule.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
 import { Link } from 'react-router-dom';
 import { examschedule } from '../data';
 
 export default function AcademicCalendar() {
-  const [darkMode, setDarkMode] = useState(false);
-
+  
+  const inputRef = useRef(null);
+   const [darkMode, setDarkMode] = useState(false); 
+  // THEME TOGGLE
   useEffect(() => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(isDark);
-    document.documentElement.classList.toggle('dark', isDark);
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+      setDarkMode(isDark);
+      document.documentElement.classList.toggle('dark', isDark);
   }, []);
-
-  const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    document.documentElement.classList.toggle('dark', newMode);
-  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500">

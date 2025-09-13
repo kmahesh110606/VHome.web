@@ -1,5 +1,6 @@
 // src/pages/PdfViewer.jsx
 import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
 import { examschedule } from "../data";
 
 export default function PdfViewer() {
@@ -8,6 +9,17 @@ export default function PdfViewer() {
 
   if (!item) return <div className="min-h-screen flex items-center justify-center text-red-500 font-bold">PDF not found</div>;
 
+  const inputRef = useRef(null);
+   const [darkMode, setDarkMode] = useState(false); 
+  // THEME TOGGLE
+  useEffect(() => {
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+      setDarkMode(isDark);
+      document.documentElement.classList.toggle('dark', isDark);
+  }, []);
+  
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500 flex flex-col">
       

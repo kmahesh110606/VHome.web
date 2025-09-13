@@ -1,10 +1,22 @@
 // src/pages/PdfViewer.jsx
 import { useParams, Link } from "react-router-dom";
 import { calendar } from "../data";
+import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
 
 export default function PdfViewer() {
   const { id } = useParams();
   const item = calendar.find(c => c.id === id);
+
+  const inputRef = useRef(null);
+   const [darkMode, setDarkMode] = useState(false); 
+  // THEME TOGGLE
+  useEffect(() => {
+      const storedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+      setDarkMode(isDark);
+      document.documentElement.classList.toggle('dark', isDark);
+  }, []);
 
   if (!item)
     return (

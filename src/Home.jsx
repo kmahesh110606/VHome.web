@@ -88,12 +88,14 @@ const Home = () => {
       </div>
 
       {/* Searchbar */}
+      
       <div className="sticky top-20 z-50 w-full flex justify-center mt-8 px-4">
         <div className="relative w-full max-w-3xl">
+          <center>
           <div
-             className={`w-full overflow-hidden rounded-full bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt backdrop-blur-lg shadow-md p-4 flex items-center space-x-4
-              relative
-             ${isFocused ? 'gradient-underline' : ''}`}
+             className={`overflow-hidden rounded-full bg-gradient-to-r from-purple-400/30 to-red-400/30 dark:from-purple-900/30 dark:to-red-900/30 shadow-lt backdrop-blur-xl shadow-md p-4 flex items-center space-x-4
+              relative hover:shadow-[0_0_20px_#c080ff,0_0_20px_#aa0000] transition-all
+             ${isFocused ? 'gradient-underline w-full' : 'w-96'}`}
               >
             <input
               type="text"
@@ -123,7 +125,7 @@ const Home = () => {
           {/* Dropdown */}
           {filteredResults.length > 0 && (
             <div
-              className="absolute  left-1/2 transform -translate-x-1/2 mt-2 w-full max-h-[50vh] overflow-y-auto rounded-xl backdrop-blur-lg bg-white/60 dark:bg-black/60 shadow-lg z-50"
+              className="absolute px-4 left-1/2 transform -translate-x-1/2 mt-2 w-full max-h-[50vh] overflow-y-auto rounded-2xl backdrop-blur-xl bg-white/60 dark:bg-black/60 shadow-lg z-50"
               style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(147, 105, 238, 0.7) transparent' }}
             >
               <ul className="divide-y my-3 divide-gray-300 dark:divide-gray-700">
@@ -135,7 +137,7 @@ const Home = () => {
                     className={`cursor-pointer px-8 py-4 mx-4 transition-transform duration-150
                       ${
                         activeIndex === index
-                          ? 'bg-gradient-to-r from-purple-600/30 to-red-600/30 text-black dark:bg-gradient-to-r from-purple-600/30 to-red-600/30 dark:text-white font-semibold rounded-full scale-105'
+                          ? 'bg-gradient-to-r from-purple-600/40 to-red-600/40 text-black dark:bg-gradient-to-r from-purple-600/20 to-red-600/20 dark:text-white font-semibold rounded-full hover:shadow-[0_0_20px_#c084ff,0_0_20px_#aa0000] scale-105'
                           : 'text-gray-900 dark:text-white'
                       }`}
                     style={{ userSelect: 'none' }}
@@ -146,13 +148,15 @@ const Home = () => {
               </ul>
             </div>
           )}
+           </center>
         </div>
       </div>
+      
 
       {/* Dashboard: Quick Links & Spotlight */}
       <div className="mt-10 px-4 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Quick Links */}
-        <div className="rounded-xl p-6 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
+        <div className="rounded-2xl py-6 px-8 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
           <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
             Quick Links
           </h2>
@@ -166,7 +170,7 @@ const Home = () => {
               <button
                 key={idx}
                 onClick={() => item.link.startsWith('http') ? window.open(item.link) : window.location.href = item.link}
-                className="w-full bg-black/10 dark:bg-white/10 rounded-xl p-6 text-lg font-medium hover:font-bold hover:scale-110 hover:rounded-full hover:bg-gradient-to-r from-purple-600/20 to-red-600/20 dark:hover:from-purple-900/20 dark:hover:to-red-900/20 transition-all"
+                className="w-full bg-black/10 dark:bg-white/10 rounded-2xl p-6 text-md font-medium hover:font-bold hover:scale-110 hover:rounded-full hover:bg-gradient-to-r from-purple-600/40 to-red-600/40 dark:hover:from-purple-900/40 dark:hover:to-red-900/40 hover:box-shadow-purple hover:shadow-[0_0_20px_#c084ff,0_0_20px_#aa0000] transition-all"
               >
                 {item.name}
               </button>
@@ -175,18 +179,17 @@ const Home = () => {
         </div>
 
         {/* Spotlight */}
-        <div className="rounded-xl p-6 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
+        <div className="rounded-2xl py-6 px-8 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
           <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
             Spotlight
           </h2>
           <div className="space-y-2">
             {[
-              'Hostel Room allotment details is now available on VTop > Hostels > Mess Selection 2025-2026.',
-              'Mess selection is now available on VTop > Hostels > Mess Selection 2025-2026.'
+              'Welcome to VHome v5.0',
             ].map((text, idx) => (
               <div
                 key={idx}
-                className="w-auto bg-black/10 dark:bg-white/10 rounded-xl p-6 text-lg font-medium hover:font-bold hover:scale-110 hover:rounded-full hover:bg-gradient-to-r from-purple-600/20 to-red-600/20 dark:hover:from-purple-900/20 dark:hover:to-red-900/20 transition-all"
+                className="w-auto bg-black/10 dark:bg-white/10 rounded-xl p-6 text-lg font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-600/10 to-red-600/10 dark:hover:from-purple-900/10 dark:hover:to-red-900/10 transition-all"
               >
                 {text}
               </div>
