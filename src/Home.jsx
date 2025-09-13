@@ -4,9 +4,13 @@ import './index.css';
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
-
   useEffect(() => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // Check localStorage for theme preference
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+
     setDarkMode(isDark);
     document.documentElement.classList.toggle('dark', isDark);
   }, []);
@@ -14,8 +18,14 @@ const Home = () => {
   const toggleTheme = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
+
+    // Update localStorage
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+
+    // Apply the theme class
     document.documentElement.classList.toggle('dark', newMode);
   };
+
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500">

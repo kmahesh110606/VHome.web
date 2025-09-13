@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Calendar from './Calendar';
 import ExamSchedule from './ExamSchedule';
@@ -5,8 +6,12 @@ import CalendarPDFViewer from './CalendarPDFViewer';
 import ExamSchedulePDFViewer from './ExamSchedulePDFViewer';
 import Home from './Home';
 
-
 export default function App() {
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
