@@ -8,7 +8,9 @@ const Home = () => {
   const [filteredResults, setFilteredResults] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const inputRef = useRef(null);  // <-- define ref here
+  const searchContainerRef = useRef(null); //detect click outside the search bar areas
+
+  const inputRef = useRef(null);  // detect input
 
   // THEME TOGGLE
   useEffect(() => {
@@ -36,7 +38,11 @@ const Home = () => {
     setActiveIndex(0);
     return;
   }
-  const allItems = [...apps, ...calendar, ...examschedule];
+  const allItems = [
+  ...apps.map(item => ({ ...item, type: 'app' })),  // Add type for apps
+  ...calendar,
+  ...examschedule
+  ];
   const lower = query.toLowerCase();
   const results = allItems.filter(item =>
     item.name.toLowerCase().includes(lower)
@@ -55,11 +61,14 @@ const Home = () => {
       setActiveIndex((prev) => (prev - 1 + filteredResults.length) % filteredResults.length);
     } else if (e.key === 'Enter') {
       const selected = filteredResults[activeIndex];
-      if (selected?.url) {
+      if (selected?.type === 'app' && selected.url) {
         window.open(selected.url, '_blank');
-      } else if (selected?.id) {
+      } else if (selected?.type === 'calendar') {
         window.location.href = `/#/calendar/${selected.id}`;
+      } else if (selected?.type === 'examschedule') {
+        window.location.href = `/#/examschedule/${selected.id}`;
       }
+
     }
   };
 
@@ -73,6 +82,30 @@ const Home = () => {
     setActiveIndex(0);
     if (inputRef.current) inputRef.current.focus();  // <-- focus on input after clearing
   };
+
+  // SEARCH BAR AUTO CLEAR ON CLICKING OUTSIDE 
+    useEffect(() => {
+    const handleClickOutside = (event) => {
+    if (
+      searchContainerRef.current &&
+      !searchContainerRef.current.contains(event.target)
+    ) {
+      setQuery('');
+      setFilteredResults([]);
+      setActiveIndex(0);
+      setIsFocused(false);
+      inputRef.current?.blur();  // <-- Remove focus from input
+    }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500 relative">
 
@@ -88,14 +121,14 @@ const Home = () => {
       </div>
 
       {/* Searchbar */}
-      
+ 
       <div className="sticky top-20 z-50 w-full flex justify-center mt-8 px-4">
-        <div className="relative w-full max-w-3xl">
+        <div className="relative w-full max-w-3xl" ref={searchContainerRef}>
           <center>
           <div
              className={`overflow-hidden rounded-full bg-gradient-to-r from-purple-400/30 to-red-400/30 dark:from-purple-900/30 dark:to-red-900/30 shadow-lt backdrop-blur-xl shadow-md p-4 flex items-center space-x-4
               relative hover:shadow-[0_0_20px_#c080ff,0_0_20px_#aa0000] transition-all
-             ${isFocused ? 'gradient-underline w-full' : 'w-96'}`}
+             ${isFocused ? 'gradient-underline w-full' : 'w-80'}`}
               >
             <input
               type="text"
@@ -129,10 +162,19 @@ const Home = () => {
               style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(147, 105, 238, 0.7) transparent' }}
             >
               <ul className="divide-y my-3 divide-gray-300 dark:divide-gray-700">
-                {filteredResults.map(({ id, name, url }, index) => (
+                {filteredResults.map(({ id, name, url, type }, index) => (
                   <li
                     key={id}
-                    onClick={() => window.open(url)}
+                    onClick={() => {
+                      if (type === 'app' && url) {
+                        window.open(url, '_blank');
+                      } else if (type === ' calendar') {
+                        window.location.href = `/#/calendar/${id}`;
+                      } else if (type === 'examschedule') {
+                        window.location.href = `/#/examschedule/${id}`;
+                      }
+                    }}
+
                     onMouseEnter={() => setActiveIndex(index)}
                     className={`cursor-pointer px-8 py-4 mx-4 transition-transform duration-150
                       ${
@@ -142,7 +184,13 @@ const Home = () => {
                       }`}
                     style={{ userSelect: 'none' }}
                   >
+                    <div style={{display:`inline`}}>
                     {name}
+                    <div className="text" style={{float: 'right', fontStyle: 'italic', color: 'gray', fontSize: '0.8rem'}}>
+                    {type}
+                    </div>
+
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -160,7 +208,7 @@ const Home = () => {
           <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
             Quick Links
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-6">
             {[
               { name: 'VTOPcc', link: 'https://vtopcc.vit.ac.in/' },
               { name: 'Calendars', link: '/#/calendar' },
@@ -199,8 +247,9 @@ const Home = () => {
       </div>
 
       {/* All Apps */}
-<div className="mt-12 px-4">
-  <div className="mx-auto max-w-screen-xl grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
+<div className="mt-12 px-4" style={{display:`flex`}}>
+  <div className="mx-auto max-w-screen-lg grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center"
+  style={{display: `inline-grid`, alignContent:`center`}}>
     {apps.map(({ id, name, description, url }) => (
       <div
         key={id}

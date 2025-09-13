@@ -91,31 +91,37 @@ export const apps = [
 ];
 
 export const examschedule = [
-    {
-        id: "fs25cat",
-        name: "Fall Semester 2025-26 CAT Schedule"
-    },
-    {
-        id: "fs25fat",
-        name: "Fall Semester 2025-26 FAT Schedule"
-    },
-    {
-        id: "fs25intra",
-        name: "Fall Semester 2025-26 Intra-Weekend Semester Schedule"
-    }
+  {
+    id: "fs25cat",
+    name: "Fall Semester 2025-26 CAT Schedule",
+    type: "examschedule"
+  },
+  {
+    id: "fs25fat",
+    name: "Fall Semester 2025-26 FAT Schedule",
+    type: "examschedule"
+  },
+  {
+    id: "fs25intra",
+    name: "Fall Semester 2025-26 Intra-Weekend Semester Schedule",
+    type: "examschedule"
+  }
 ];
 
 export const calendar = [
-    {
-        id: "fs25seniorexceptlaw",
-        name: "Fall Semester 2025-26 Academic Calendar"
-    },
-    {
-        id: "fs25intra", 
-        name: "Fall Semester Intra-Weekend 2025-26 Academic Calendar"
-    },
-    {
-        id: "vitol25",
-        name: "VITOL OC 2025-26 Time Schedule"
-    }
+  {
+    id: "fs25seniorexceptlaw",
+    name: "Fall Semester 2025-26 Academic Calendar",
+    type: "calendar"
+  },
+  {
+    id: "fs25intra", 
+    name: "Fall Semester Intra-Weekend 2025-26 Academic Calendar",
+    type: "calendar"
+  },
+  {
+    id: "vitol25",
+    name: "VITOL OC 2025-26 Time Schedule",
+    type: "calendar"
+  }
 ];
