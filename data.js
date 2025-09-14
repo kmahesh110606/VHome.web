@@ -53,7 +53,7 @@ export const apps = [
         url: "https://egateway.chennai.vit.ac.in/home",
     },
     {
-        id: "facutlyreview",
+        id: "facultyreview",
         name: "VIT Faculty Review",
         url: "https://vitcfacultyreview.streamlit.app/",
         description: "Professor ratings and reviews by students"
@@ -69,6 +69,12 @@ export const apps = [
         name: "Clubs Hub",
         url: "https://vit-clubs-hub.netlify.app/",
         description: "Get details of latest Club recruitments and Events"
+    },
+    {
+      id: "ffcsonthego",
+      name: "FFCS On The Go",
+      url: "https://ffcsonthego.vatz88.in/#Chennai",
+      description: "Plan your timetables with Mock FFCS"
     }
   /*  {
         id: "rankpredictor",
