@@ -243,15 +243,6 @@ const Home = () => {
                 {text}
               </div>
             ))}
-            <div className="bg-black/10 dark:bg-white/10 rounded-xl p-4 text-sm font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-600/10 to-red-600/10 dark:hover:from-purple-900/10 dark:hover:to-red-900/10 transition-all">
-            Apps you may wanna download: <br/> <br/>
-            <button className='bg-black/10 dark:bg-white/10 p-2 mx-4 rounded-lg hover:scale-110 transition-all' onClick={window.open(`https://play.google.com/store/apps/details?id=tech.kaffeine.unmessify&utm_source=kaffeine.tech&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1`)}>
-            Unmessify
-            </button>
-            <button className='bg-black/10 dark:bg-white/10 p-2 mx-4 rounded-lg hover:scale-110 transition-all' onClick={window.open(`https://vtopchennai.therealsuji.tk/`)}>
-            VIT Student App
-            </button>
-            </div>
           </div>
         </div>
       </div>
