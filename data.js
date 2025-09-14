@@ -49,8 +49,8 @@ export const apps = [
     },
     {
         id: "library",
-        name: "Library",
-        url: "https://library.vit.ac.in/",
+        name: "E-Library",
+        url: "https://egateway.chennai.vit.ac.in/home",
     },
     {
         id: "webcc",
@@ -61,31 +61,25 @@ export const apps = [
     {
         id: "facutlyreview",
         name: "VIT Faculty Review",
-        url: "https://vitfacultyreview.com/",
-        description: "Rate and Review your Professors"
+        url: "https://vitcfacultyreview.streamlit.app/",
+        description: "Professor ratings and reviews by students"
     },
     {
         id: "placements",
         name: "Placements Tracker", 
-        url: "https://vitplacements.rajchandra.me/",
+        url: "https://vit-placements-tracker.streamlit.app/",
         description: "Track Placement Statistics"
     },
     {
-        id: "vimegle",
-        name: "ViMeglE",
-        url: "https://vimegle.vit.ac.in/",
-        description: "Chat with Random VITians"
-    },
-    {
         id: "eventsandrectruitments",
-        name: "Recruitments Portal",
-        url: "https://recruitments.vit.ac.in/",
-        description: "Internship and Job Applications"
+        name: "Clubs Hub",
+        url: "https://vit-clubs-hub.netlify.app/",
+        description: "Get details of latest Club recruitments and Events"
     },
     {
         id: "rankpredictor",
         name: "VIT Rank Predictor",
-        url: "https://vitrankpredictor.rajchandra.me/",
+        url: "https://vitranks.vercel.app/",
         description: "Predict your VITEEE Rank"
     }
 ];
