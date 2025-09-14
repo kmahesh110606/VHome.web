@@ -107,7 +107,7 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-violet-100/10 to-red-100/10 dark:bg-black text-black dark:text-white transition-colors duration-500 relative">
+    <div className="min-h-screen bg-white dark:bg-black/90 text-black dark:text-white transition-colors duration-500 relative">
 
       {/* Header */}
       <div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
@@ -126,7 +126,7 @@ const Home = () => {
         <div className="relative w-full max-w-3xl" ref={searchContainerRef}>
           <center>
           <div
-             className={`overflow-hidden rounded-full bg-gradient-to-r from-purple-400/30 to-red-400/30 dark:from-purple-900/30 dark:to-red-900/30 shadow-lt backdrop-blur-xl shadow-md p-4 flex items-center space-x-4
+             className={`overflow-hidden rounded-full bg-gradient-to-r from-purple-400/40 to-red-400/40 dark:from-purple-900/40 dark:to-red-900/40 shadow-lt backdrop-blur-2xl shadow-md p-4 flex items-center space-x-4
               relative hover:shadow-[0_0_20px_#c080ff,0_0_20px_#aa0000] transition-all
              ${isFocused ? 'gradient-underline w-full' : 'w-80'}`}
               >
@@ -202,10 +202,10 @@ const Home = () => {
       
 
       {/* Dashboard: Quick Links & Spotlight */}
-      <div className="mt-10 px-4 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="mt-8 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Quick Links */}
-        <div className="rounded-2xl py-6 px-8 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
-          <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
+        <div className="rounded-2xl py-4 px-6 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
+          <h2 className="text-lg font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
             Quick Links
           </h2>
           <div className="grid grid-cols-2 gap-6">
@@ -218,7 +218,7 @@ const Home = () => {
               <button
                 key={idx}
                 onClick={() => item.link.startsWith('http') ? window.open(item.link) : window.location.href = item.link}
-                className="w-full bg-black/10 dark:bg-white/10 rounded-2xl p-6 text-md font-medium hover:font-bold hover:scale-110 hover:rounded-full hover:bg-gradient-to-r from-purple-600/40 to-red-600/40 dark:hover:from-purple-900/40 dark:hover:to-red-900/40 hover:box-shadow-purple hover:shadow-[0_0_20px_#c084ff,0_0_20px_#aa0000] transition-all"
+                className="bg-black/10 dark:bg-white/10 rounded-2xl p-4 text-sm font-medium hover:font-bold hover:scale-105 hover:rounded-full hover:bg-gradient-to-r from-purple-600/40 to-red-600/40 dark:hover:from-purple-900/40 dark:hover:to-red-900/40 hover:box-shadow-purple hover:shadow-[0_0_20px_#c084ff,0_0_20px_#aa0000] transition-all"
               >
                 {item.name}
               </button>
@@ -227,8 +227,9 @@ const Home = () => {
         </div>
 
         {/* Spotlight */}
-        <div className="rounded-2xl py-6 px-8 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
-          <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
+
+        <div className="rounded-2xl py-4 px-6 bg-black/10 dark:bg-white/10 shadow-lg backdrop-blur-md">
+          <h2 className="text-lg font-bold mb-4 bg-gradient-to-r from-purple-900 to-red-900 dark:from-purple-300 dark:to-red-300 bg-clip-text text-transparent">
             Spotlight
           </h2>
           <div className="space-y-2">
@@ -237,7 +238,7 @@ const Home = () => {
             ].map((text, idx) => (
               <div
                 key={idx}
-                className="w-auto bg-black/10 dark:bg-white/10 rounded-xl p-6 text-lg font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-600/10 to-red-600/10 dark:hover:from-purple-900/10 dark:hover:to-red-900/10 transition-all"
+                className="bg-black/10 dark:bg-white/10 rounded-xl p-4 text-sm font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-600/10 to-red-600/10 dark:hover:from-purple-900/10 dark:hover:to-red-900/10 transition-all"
               >
                 {text}
               </div>
@@ -246,30 +247,26 @@ const Home = () => {
         </div>
       </div>
 
-      {/* All Apps */}
-<div className="mt-12 px-4" style={{display:`flex`}}>
-  <div className="mx-auto max-w-screen-lg grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center"
-  style={{display: `inline-grid`, alignContent:`center`}}>
+{/* All Apps */}
+<div className="mt-12 px-4" style={{ display: `flex` }}>
+  <div
+    className="mx-auto max-w-screen-lg grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center"
+    style={{ display: `inline-grid`, alignContent: `center` }}
+  >
     {apps.map(({ id, name, description, url }) => (
       <div
         key={id}
         onClick={() => window.open(url)}
-         className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 xl:w-48 xl:h-48 
+        className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 xl:w-44 xl:h-44 
              rounded-2xl overflow-hidden bg-white/10 dark:bg-white/10 backdrop-blur-2xl 
              cursor-pointer transition-transform transform hover:scale-110 group"
         style={{
-        backgroundImage: `url('/icons/light/${id}.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        transition: 'box-shadow 0.3s ease', // smooth glow transition
-      }}
-      onMouseEnter={(e) =>
-      (e.currentTarget.style.boxShadow =
-      '0 0 25px 5px rgba(66, 10, 119, 0.2), 0 0 35px 10px rgba(239,68,68,0.2)')
-      }
-      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
+          backgroundImage: `url('/icons/${!darkMode ? 'dark' : 'light'}/${id}.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+           // smooth glow transition
+        }}
       >
-
         <div className="absolute inset-0 group-hover:backdrop-blur-md group-hover:scale-110 transition duration-300" />
         <div className="absolute inset-0 bg-white/30 dark:bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
           <div className="text-center px-2 space-y-1">
