@@ -107,7 +107,7 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500 relative">
+    <div className="min-h-screen bg-gradient-to-r from-violet-100/10 to-red-100/10 dark:bg-black text-black dark:text-white transition-colors duration-500 relative">
 
       {/* Header */}
       <div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
@@ -116,7 +116,7 @@ const Home = () => {
           onClick={toggleTheme}
           className="px-4 py-2 bg-white text-purple-700 dark:bg-black dark:text-purple-300 border border-purple-300 rounded-md hover:bg-purple-100 dark:hover:bg-purple-900 transition"
         >
-          {darkMode ? '☀' : '☾'}
+          {!darkMode ? '☀' : '☾'}
         </button>
       </div>
 
@@ -254,13 +254,22 @@ const Home = () => {
       <div
         key={id}
         onClick={() => window.open(url)}
-        className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 xl:w-48 xl:h-48 rounded-2xl overflow-hidden shadow-lg bg-white/10 dark:bg-white/10 backdrop-blur-2xl cursor-pointer transition-transform transform hover:scale-110 hover:shadow-2xl group"
+         className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-44 md:h-44 xl:w-48 xl:h-48 
+             rounded-2xl overflow-hidden bg-white/10 dark:bg-white/10 backdrop-blur-2xl 
+             cursor-pointer transition-transform transform hover:scale-110 group"
         style={{
-          backgroundImage: `url('/icons/${id}.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        backgroundImage: `url('/icons/light/${id}.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        transition: 'box-shadow 0.3s ease', // smooth glow transition
+      }}
+      onMouseEnter={(e) =>
+      (e.currentTarget.style.boxShadow =
+      '0 0 25px 5px rgba(66, 10, 119, 0.2), 0 0 35px 10px rgba(239,68,68,0.2)')
+      }
+      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
       >
+
         <div className="absolute inset-0 group-hover:backdrop-blur-md group-hover:scale-110 transition duration-300" />
         <div className="absolute inset-0 bg-white/30 dark:bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
           <div className="text-center px-2 space-y-1">
