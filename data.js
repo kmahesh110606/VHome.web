@@ -53,12 +53,6 @@ export const apps = [
         url: "https://egateway.chennai.vit.ac.in/home",
     },
     {
-        id: "webcc",
-        name: "WebCC",
-        url: "https://webcc.vit.ac.in/",
-        description: "STS Exam Link"
-    },
-    {
         id: "facutlyreview",
         name: "VIT Faculty Review",
         url: "https://vitcfacultyreview.streamlit.app/",
@@ -75,13 +69,13 @@ export const apps = [
         name: "Clubs Hub",
         url: "https://vit-clubs-hub.netlify.app/",
         description: "Get details of latest Club recruitments and Events"
-    },
-    {
+    }
+  /*  {
         id: "rankpredictor",
         name: "VIT Rank Predictor",
         url: "https://vitranks.vercel.app/",
         description: "Predict your VITEEE Rank"
-    }
+    }*/
 ];
 
 export const examschedule = [
@@ -91,6 +85,16 @@ export const examschedule = [
     type: "examschedule"
   },
   {
+    id: "fs25intramidterm",
+    name: "Fall Semester 2025-26 Intra-Weekend Mid-Term Schedule",
+    type: "examschedule"
+  },
+  {
+    id: "vitol25",
+    name: "VITOL OC 2025-26 Time Schedule",
+    type: "calendar"
+  }
+  /*{
     id: "fs25fat",
     name: "Fall Semester 2025-26 FAT Schedule",
     type: "examschedule"
@@ -99,7 +103,7 @@ export const examschedule = [
     id: "fs25intra",
     name: "Fall Semester 2025-26 Intra-Weekend Semester Schedule",
     type: "examschedule"
-  }
+  }*/
 ];
 
 export const calendar = [
@@ -111,11 +115,6 @@ export const calendar = [
   {
     id: "fs25intra", 
     name: "Fall Semester Intra-Weekend 2025-26 Academic Calendar",
-    type: "calendar"
-  },
-  {
-    id: "vitol25",
-    name: "VITOL OC 2025-26 Time Schedule",
     type: "calendar"
   }
 ];
