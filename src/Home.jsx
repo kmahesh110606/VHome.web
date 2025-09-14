@@ -63,7 +63,7 @@ const Home = () => {
       const selected = filteredResults[activeIndex];
       if (selected?.type === 'app' && selected.url) {
         window.open(selected.url, '_blank');
-      } else if (type === 'calendar') {
+      } else if (selected?.type === 'calendar') {
         window.location.href = `/#/calendar/${id}`;
       } else if (selected?.type === 'examschedule') {
         window.location.href = `/#/examschedule/${selected.id}`;
@@ -168,7 +168,7 @@ const Home = () => {
                     onClick={() => {
                       if (type === 'app' && url) {
                         window.open(url, '_blank');
-                      } else if (type === ' calendar') {
+                      } else if (type === 'calendar') {
                         window.location.href = `/#/calendar/${id}`;
                       } else if (type === 'examschedule') {
                         window.location.href = `/#/examschedule/${id}`;
