@@ -1,21 +1,25 @@
-// src/pages/PdfViewer.jsx
 import { useParams, Link } from "react-router-dom";
 import { calendar } from "../data";
-import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
+import React, { useState, useEffect, useRef } from "react";
 
 export default function PdfViewer() {
   const { id } = useParams();
-  const item = calendar.find(c => c.id === id);
+  const item = calendar.find((c) => c.id === id);
 
   const inputRef = useRef(null);
-   const [darkMode, setDarkMode] = useState(false); 
-  // THEME TOGGLE
+  const [darkMode, setDarkMode] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
+
+  // THEME TOGGLE + detect Android
   useEffect(() => {
-      const storedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
-      setDarkMode(isDark);
-      document.documentElement.classList.toggle('dark', isDark);
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+    setDarkMode(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    setIsAndroid(/android/i.test(userAgent));
   }, []);
 
   if (!item)
@@ -25,24 +29,28 @@ export default function PdfViewer() {
       </div>
     );
 
+  // Construct URLs
+  const pdfUrl = `/calendar/${item.id}.pdf`;
+  const googleViewerUrl = `https://docs.google.com/gview?url=${encodeURIComponent(
+    window.location.origin + pdfUrl
+  )}&embedded=true`;
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500 flex flex-col">
-      
       {/* Navbar with breadcrumb */}
       <div className="sticky top-0 z-50 backdrop-blur-xl px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md flex flex-wrap items-center justify-between">
-        
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-base md:text-lg font-medium">
           {/* VHome Link */}
           <Link
             to="/"
             className="text-lg font-bold text-purple-700 dark:text-purple-200 transition-all transform hover:scale-105 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-400 to-red-400"
-            style={{ textShadow: 'none' }}
-            onMouseEnter={e => {
-              e.target.style.textShadow = '0 0 60px #c084fc, 0 0 12px #f87171';
+            style={{ textShadow: "none" }}
+            onMouseEnter={(e) => {
+              e.target.style.textShadow = "0 0 60px #c084fc, 0 0 12px #f87171";
             }}
-            onMouseLeave={e => {
-              e.target.style.textShadow = 'none';
+            onMouseLeave={(e) => {
+              e.target.style.textShadow = "none";
             }}
           >
             VHome
@@ -54,12 +62,12 @@ export default function PdfViewer() {
           <Link
             to="/calendar"
             className="text-lg font-bold text-black dark:text-white transition-all transform hover:scale-105 hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-400 to-red-400"
-            style={{ textShadow: 'none' }}
-            onMouseEnter={e => {
-              e.target.style.textShadow = '0 0 60px #c084fc, 0 0 12px #f87171';
+            style={{ textShadow: "none" }}
+            onMouseEnter={(e) => {
+              e.target.style.textShadow = "0 0 60px #c084fc, 0 0 12px #f87171";
             }}
-            onMouseLeave={e => {
-              e.target.style.textShadow = 'none';
+            onMouseLeave={(e) => {
+              e.target.style.textShadow = "none";
             }}
           >
             Academic Calendar
@@ -68,20 +76,18 @@ export default function PdfViewer() {
           <span className="text-gray-400"> &gt; </span>
 
           {/* Current item name */}
-          <span className="text-lg font-bold text-black dark:text-white">
-            {item.name}
-          </span>
+          <span className="text-lg font-bold text-black dark:text-white">{item.name}</span>
         </div>
-
       </div>
 
       {/* PDF Viewer */}
       <div className="flex-grow px-6 py-4 mt-6">
         <div className="w-full h-[600px] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-md">
           <iframe
-            src={`/calendar/${item.id}.pdf`}
+            src={isAndroid ? googleViewerUrl : pdfUrl}
             title={item.name}
             className="w-full h-full"
+            allowFullScreen
           />
         </div>
       </div>
