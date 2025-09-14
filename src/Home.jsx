@@ -261,7 +261,7 @@ const Home = () => {
              rounded-2xl overflow-hidden bg-white/10 dark:bg-white/10 backdrop-blur-2xl 
              cursor-pointer transition-transform transform hover:scale-110 group"
         style={{
-          backgroundImage: `url('/icons/${!darkMode ? 'dark' : 'light'}/${id}.png')`,
+          backgroundImage: `url('/icons/${darkMode ? 'dark' : 'light'}/${id}.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
            // smooth glow transition
