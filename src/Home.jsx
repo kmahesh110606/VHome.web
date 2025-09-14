@@ -107,7 +107,7 @@ const Home = () => {
 
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black/90 text-black dark:text-white transition-colors duration-500 relative">
+    <div className="min-h-screen bg-white dark:bg-[rgb(34,34,34)] text-black dark:text-white transition-colors duration-500 relative">
 
       {/* Header */}
       <div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
