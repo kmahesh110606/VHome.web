@@ -114,7 +114,7 @@ const Home = () => {
         <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
         <button
           onClick={toggleTheme}
-          className="px-4 py-2 bg-white text-purple-700 dark:bg-black dark:text-purple-300 border border-purple-300 rounded-md hover:bg-purple-100 dark:hover:bg-purple-900 transition"
+          className="px-4 py-2 bg-transparent hover:text-purple-700 dark:bg-transparent hover:dark:text-purple-300 font-bold rounded-full hover:scale-110 dark:hover:scale-110 transition"
         >
           {!darkMode ? '☀' : '☾'}
         </button>
@@ -243,6 +243,15 @@ const Home = () => {
                 {text}
               </div>
             ))}
+            <div className="bg-black/10 dark:bg-white/10 rounded-xl p-4 text-sm font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-600/10 to-red-600/10 dark:hover:from-purple-900/10 dark:hover:to-red-900/10 transition-all">
+            Apps you may wanna download: <br/> <br/>
+            <button className='bg-black/10 dark:bg-white/10 p-2 mx-4 rounded-lg hover:scale-110 transition-all' onClick={window.open(`https://play.google.com/store/apps/details?id=tech.kaffeine.unmessify&utm_source=kaffeine.tech&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1`)}>
+            Unmessify
+            </button>
+            <button className='bg-black/10 dark:bg-white/10 p-2 mx-4 rounded-lg hover:scale-110 transition-all' onClick={window.open(`https://vtopchennai.therealsuji.tk/`)}>
+            VIT Student App
+            </button>
+            </div>
           </div>
         </div>
       </div>
