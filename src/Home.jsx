@@ -21,12 +21,6 @@ const Home = () => {
   const inputRef = useRef(null);  // detect input
 
   // THEME TOGGLE
-  useEffect(() => {
-  const isDark = document.documentElement.classList.contains('dark');
-  setDarkMode(isDark);
-}, []);
-
-
   const toggleTheme = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
