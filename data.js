@@ -75,8 +75,14 @@ export const apps = [
       name: "FFCS On The Go",
       url: "https://ffcsonthego.vatz88.in/#Chennai",
       description: "Plan your timetables with Mock FFCS"
+    },
+    /*{
+      id: "new",
+      name: "Add Services",
+      url: "https://forms.microsoft.com/r/Jexc00E8nt",
+      description: "Help us grow by suggesting new services and apps that you use"
     }
-  /*  {
+    {
         id: "rankpredictor",
         name: "VIT Rank Predictor",
         url: "https://vitranks.vercel.app/",

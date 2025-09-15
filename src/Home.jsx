@@ -14,12 +14,10 @@ const Home = () => {
 
   // THEME TOGGLE
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
-    setDarkMode(isDark);
-    document.documentElement.classList.toggle('dark', isDark);
-  }, []);
+  const isDark = document.documentElement.classList.contains('dark');
+  setDarkMode(isDark);
+}, []);
+
 
   const toggleTheme = () => {
     const newMode = !darkMode;
@@ -284,8 +282,10 @@ const Home = () => {
 </div>
 
       {/* Footer */}
-      <div className="mt-20 text-center text-sm text-gray-400 py-8">
-        © All rights reserved · vhome.co.in
+      <div className="mt-20 text-center text-md text-gray-400 py-8">
+        <div>© All rights reserved · vhome.co.in
+        </div>
+        <div>Made with ❤️ by Mahesh, Josh and Atharva</div>
       </div>
     </div>
   );

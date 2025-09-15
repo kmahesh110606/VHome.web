@@ -3,27 +3,6 @@
 @tailwind utilities;
 
 
-/* Custom Fonts for Safari */
-@font-face {
-  font-family: 'Segoe UI';
-  src: url('/assets/fonts/Segoe-UI.ttf') format('truetype'),
-       url('/assets/fonts/Segoe-UI.woff2') format('woff2'),
-       url('/assets/fonts/Segoe-UI.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Segoe UI Bold';
-  src: url('/assets/fonts/Segoe-UI-Bold.ttf') format('truetype'),
-       url('/assets/fonts/Segoe-UI-Bold.woff2') format('woff2'),
-       url('/assets/fonts/Segoe-UI-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-
-
 /* Root Element Styles (Made by React) */
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
