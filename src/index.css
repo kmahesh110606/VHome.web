@@ -25,6 +25,16 @@ html {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Prevent white flash on load */
+html {
+  background-color: rgb(34, 34, 34); /* dark background */
+}
+
+html.light {
+  background-color: white; /* fallback if light */
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
