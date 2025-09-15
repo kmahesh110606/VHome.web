@@ -7,6 +7,8 @@ import ExamSchedulePDFViewer from './ExamSchedulePDFViewer';
 import Home from './Home';
 import VITOL from './VITOL';
 import NPTEL from './NPTEL';
+import Contribute from './Contribute';
+import About from './About';
 
 export default function App() {
   useEffect(() => {
@@ -22,10 +24,10 @@ export default function App() {
       <Route path="/examschedule" element={<ExamSchedule />} />
       <Route path="/examschedule/:id" element={<ExamSchedulePDFViewer />} />
       <Route path="/all" element={<div>All Apps Page</div>} />
-      <Route path="/about" element={<div>About Page</div>} />
+      <Route path="/about" element={<About />} />
       <Route path="/privacy" element={<div>Privacy Policy Page</div>} />
       <Route path="/terms" element={<div>Terms and Conditions Page</div>} />
-      <Route path="/request" element={<div>Request Page</div>} />
+      <Route path="/contribute" element={<Contribute />} />
       <Route path="/vitol" element={<VITOL />} />
       <Route path="/nptel" element={<NPTEL />} />
       <Route path="*" element={<div>404 Not Found</div>} />
