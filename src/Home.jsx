@@ -3,7 +3,15 @@ import { apps, calendar, examschedule, vitol, nptel } from '../data';
 import './index.css';
 
 const Home = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+    return storedTheme === 'dark';
+  }
+  // fallback: check if <html> already has dark mode class
+  return document.documentElement.classList.contains('dark');
+});
+
   const [query, setQuery] = useState('');
   const [filteredResults, setFilteredResults] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
