@@ -212,7 +212,7 @@ const Home = () => {
             {[
               { name: 'VTOPcc', link: 'https://vtopcc.vit.ac.in/' },
               { name: 'Calendars', link: '/#/calendar' },
-              { name: 'NPTEL Links', link: '/#/nptel' },
+              /*{ name: 'NPTEL Links', link: '/#/nptel' },*/
               { name: 'Exam Schedule', link: '/#/examschedule' }
             ].map((item, idx) => (
               <button

@@ -65,7 +65,7 @@ export const apps = [
         description: "Track Placement Statistics"
     },
     {
-        id: "eventsandrectruitments",
+        id: "clubshub",
         name: "Clubs Hub",
         url: "https://vit-clubs-hub.netlify.app/",
         description: "Get details of latest Club recruitments and Events"
