@@ -71,7 +71,7 @@ export const apps = [
         description: "Get details of latest Club recruitments and Events"
     },
     {
-      id: "ffcsonthego",
+      id: "ffcs",
       name: "FFCS On The Go",
       url: "https://ffcsonthego.vatz88.in/#Chennai",
       description: "Plan your timetables with Mock FFCS"
