@@ -133,32 +133,46 @@ export const calendar = [
 
 export const nptel = [
   {
-    id: "link1",
-    name: "NPTEL Study Material Link 1",
+    id: "link",
+    name: "NPTEL Official Study Material Link",
     url: "https://nptel.ac.in/noc/",
   },
-
+  {
+    id: "link1",
+    name: "NPTEL Study Material Link 1",
+    url: "https://nptel.sreecha.space",
+  },
+  {
+    id: "link2",
+    name: "NPTEL Study Material Link 2",
+    url: "https://nptel-practice.vercel.app",
+  },
+  {
+    id: "link3",
+    name: "NPTEL Study Material Link 3",
+    url: "https://nptel-quiz-swart.vercel.app",
+  }
 ]
 
 export const vitol = [
   {
-    id: "vitolcc1",
-    name: "VITOL CC 1",
-    url: "https://vitolcc1.vit.ac.in/login/index.php",
+    id: "vitolcc",
+    name: "VITOLCC",
+    url: "https://vitolcc.vit.ac.in/login/index.php",
   },
   {
     id: "vitolcc1",
-    name: "VITOL CC 1",
+    name: "VITOLCC-1",
     url: "https://vitolcc1.vit.ac.in/login/index.php",
   },
   {
-    id: "vitolcc1",
-    name: "VITOL CC 1",
-    url: "https://vitolcc1.vit.ac.in/login/index.php",
+    id: "vitolcc2",
+    name: "VITOLCC-2",
+    url: "https://vitolcc2.vit.ac.in/login/index.php",
   },
   {
-    id: "vitolcc1",
-    name: "VITOL CC 1",
+    id: "vitolcc3",
+    name: "VITOLCC-3",
     url: "https://vitolcc1.vit.ac.in/login/index.php",
   }
 ]
