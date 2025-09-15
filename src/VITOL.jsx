@@ -42,7 +42,7 @@ export default function VITOL() {
 
           {/* Static Academic Calendar Text */}
           <span className="text-lg font-bold text-black dark:text-white">
-            Academic Calendar
+            VITOLCC
           </span>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function VITOL() {
           {vitol.map(item => (
             <div
               key={item.id}
-              onclick={() => window.open(item.url, '_blank')}
+              onClick={() => window.open(item.url, '_blank')}
               className="w-full bg-black/10 dark:bg-white/10 rounded-xl p-6 text-lg font-medium hover:font-bold hover:scale-105 hover:rounded-full hover:bg-gradient-to-r from-purple-500/20 to-red-500/20 dark:hover:bg-gradient-to-r from-purple-900/60 to-red-900/30 transition-all hover:shadow-[0_0_40px_#c084ff,0_0_40px_#aa0000]"
             >
               {item.name}
