@@ -137,6 +137,7 @@ export const nptel = [
     name: "NPTEL Study Material Link 1",
     url: "https://nptel.ac.in/noc/",
   },
+
 ]
 
 export const vitol = [
@@ -145,4 +146,19 @@ export const vitol = [
     name: "VITOL CC 1",
     url: "https://vitolcc1.vit.ac.in/login/index.php",
   },
+  {
+    id: "vitolcc1",
+    name: "VITOL CC 1",
+    url: "https://vitolcc1.vit.ac.in/login/index.php",
+  },
+  {
+    id: "vitolcc1",
+    name: "VITOL CC 1",
+    url: "https://vitolcc1.vit.ac.in/login/index.php",
+  },
+  {
+    id: "vitolcc1",
+    name: "VITOL CC 1",
+    url: "https://vitolcc1.vit.ac.in/login/index.php",
+  }
 ]
