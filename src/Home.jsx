@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
-import { apps, calendar, examschedule } from '../data';
+import { apps, calendar, examschedule, vitol, nptel } from '../data';
 import './index.css';
 
 const Home = () => {
@@ -39,7 +39,9 @@ const Home = () => {
   const allItems = [
   ...apps.map(item => ({ ...item, type: 'app' })),  // Add type for apps
   ...calendar,
-  ...examschedule
+  ...examschedule,
+  ...nptel.map(item => ({ ...item, type: 'nptel' })),
+  ...vitol.map(item => ({ ...item, type: 'vitol' }))
   ];
   const lower = query.toLowerCase();
   const results = allItems.filter(item =>
@@ -65,6 +67,10 @@ const Home = () => {
         window.location.href = `/#/calendar/${id}`;
       } else if (selected?.type === 'examschedule') {
         window.location.href = `/#/examschedule/${selected.id}`;
+      } else if (selected?.type === 'nptel' && selected.url) {
+        window.open(selected.url, '_blank');
+      } else if (selected?.type === 'vitol' && selected.url) {
+        window.open(selected.url, '_blank');
       }
 
     }
@@ -170,6 +176,10 @@ const Home = () => {
                         window.location.href = `/#/calendar/${id}`;
                       } else if (type === 'examschedule') {
                         window.location.href = `/#/examschedule/${id}`;
+                      } else if (type === 'nptel' && url) {
+                        window.open(url, '_blank');
+                      } else if (type === 'vitol' && url) {
+                        window.open(url, '_blank');
                       }
                     }}
 
@@ -210,7 +220,7 @@ const Home = () => {
             {[
               { name: 'VTOPcc', link: 'https://vtopcc.vit.ac.in/' },
               { name: 'Calendars', link: '/#/calendar' },
-              /*{ name: 'NPTEL Links', link: '/#/nptel' },*/
+              { name: 'NPTEL Links', link: '/#/nptel' },
               { name: 'Exam Schedule', link: '/#/examschedule' }
             ].map((item, idx) => (
               <button
@@ -271,7 +281,7 @@ const Home = () => {
             <div className="text-black dark:text-white font-semibold text-sm sm:text-base md:text-lg">
               {name}
             </div>
-            <div className="hidden md:block text-black dark:text-white font-normal text-xs md:text-sm">
+            <div className="hidden md:block text-black dark:text-white font-normal text-sm md:text-sm">
               {description}
             </div>
           </div>

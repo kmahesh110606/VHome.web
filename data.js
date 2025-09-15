@@ -14,7 +14,7 @@ export const apps = [
     {
         id: "vitol",
         name: "VITOL Coursepage",
-        url: "https://vitolcc1.vit.ac.in/login/index.php",
+        url: "/#/vitol",
         description: "Portal for accessing Quizzes and Materials for Non-Graded Courses"
     },
     {
@@ -130,3 +130,19 @@ export const calendar = [
     type: "calendar"
   }
 ];
+
+export const nptel = [
+  {
+    id: "link1",
+    name: "NPTEL Study Material Link 1",
+    url: "https://nptel.ac.in/noc/",
+  },
+]
+
+export const vitol = [
+  {
+    id: "vitolcc1",
+    name: "VITOL CC 1",
+    url: "https://vitolcc1.vit.ac.in/login/index.php",
+  },
+]
