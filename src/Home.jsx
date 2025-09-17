@@ -280,7 +280,7 @@ const Home = () => {
         <div className="absolute inset-0 group-hover:backdrop-blur-md group-hover:scale-110 transition duration-300" />
         <div className="absolute inset-0 bg-white/30 dark:bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
           <div className="text-center px-2 space-y-1">
-            <div className="text-black dark:text-white font-semibold text-sm sm:text-base md:text-lg">
+            <div className="text-black dark:text-white font-bold text-sm sm:text-base md:text-md">
               {name}
             </div>
             <div className="hidden md:block text-black dark:text-white font-normal text-sm md:text-sm">

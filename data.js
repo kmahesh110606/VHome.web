@@ -82,12 +82,12 @@ export const apps = [
       url: "https://forms.microsoft.com/r/Jexc00E8nt",
       description: "Help us grow by suggesting new services and apps that you use"
     }
-    {
-        id: "rankpredictor",
-        name: "VIT Rank Predictor",
-        url: "https://vitranks.vercel.app/",
-        description: "Predict your VITEEE Rank"
-    }*/
+    */{
+        id: "ranks",
+        name: "VITEEE Rank Predictor",
+        url: "https://ranks.vhome.co.in/",
+        description: "Predict admission to VIT courses based on VITEEE Rank"
+    }
 ];
 
 export const examschedule = [
