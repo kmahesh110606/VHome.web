@@ -1,8 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
 import { apps, calendar, examschedule, vitol, nptel } from '../data';
 import './index.css';
-import { PersonFeedback24Filled, WeatherMoon16Filled, WeatherSunny20Filled, Info24Filled, SearchSparkle24Filled, PersonFeedback20Filled } from '@fluentui/react-icons';
-//import { ClosedCaptionOff28Regular, Dismiss16Filled, WeatherMoon20Filled, WeatherSunny20Filled } from '@fluentui/react-icons/fonts';
+import {
+  PersonFeedback24Filled,
+  WeatherMoon16Filled,
+  WeatherSunny20Filled,
+  Info24Filled,
+  SearchSparkle24Filled,
+  PersonFeedback20Filled,
+  Dismiss16Filled 
+} from '@fluentui/react-icons';
 
 
 const Home = () => {
