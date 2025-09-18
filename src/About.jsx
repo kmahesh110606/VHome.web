@@ -40,7 +40,7 @@ export default function About() {
     },
     {
       name: "Josh",
-      role: "UI/UX Designer, Data Integratior",
+      role: "UI/UX Designer, Data Integrator",
       img: "https://avatars.githubusercontent.com/u/62760536?v=4",
       linkedin: "https://www.linkedin.com/in/joshsajugeorge201106/",
       insta: "https://www.instagram.com/josh_george_2011",
