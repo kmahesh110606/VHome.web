@@ -60,7 +60,7 @@ export default function AcademicCalendar() {
       </div>
 
       {/* Content */}
-      <div className="mt-10 px-10 md:px-10 p-2 m-6">
+      <div className="mt-10 px-5 md:px-5 p-2 m-6">
         <div className="grid grid-cols-0 md:grid-cols-0 gap-8">
           {examschedule.map(item => (
             <Link

@@ -46,7 +46,7 @@ export default function Contribute() {
       </div>
 
       {/* Content */}
-      <div className="mt-10 px-10 md:px-10 p-2 m-6">
+      <div className="mt-10 px-5 md:px-5 p-2 m-6">
         <h1 className="text-3xl font-bold mb-6 text-center">Help the VHome Community grow faster than ever!</h1>
         <h3 className='text-md font-semibold mb-6 text-center'> Here are a few ways you can contribute: </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

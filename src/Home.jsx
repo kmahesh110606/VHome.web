@@ -145,7 +145,7 @@ const PILL_EXTRA = 120; // px of horizontal space the pill needs to avoid overla
   {/* Logo */}
   <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
 
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center">
     {/* Dark/Light Mode Toggle */}
     <button
       onClick={() => toggleTheme()}
@@ -200,7 +200,7 @@ const PILL_EXTRA = 120; // px of horizontal space the pill needs to avoid overla
       </span>
     </button>
 
-    {/* Info 
+    {/* Info */} 
     <button
       onClick={() => window.location.href = '/#/about'}
       className="group flex items-center rounded-full cursor-pointer
@@ -222,7 +222,7 @@ const PILL_EXTRA = 120; // px of horizontal space the pill needs to avoid overla
           About
         </span>
       </span>
-    </button> */}
+    </button> 
   </div>
 </div>
 
