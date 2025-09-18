@@ -56,7 +56,7 @@ export default function Contribute() {
           </div>
           <div className="bg-black/10 dark:bg-white/10 rounded-xl p-6 text-md font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-500/20 to-red-500/20 dark:hover:bg-gradient-to-r from-purple-900/60 to-red-900/30 transition-all hover:shadow-[0_0_40px_#c084ff,0_0_40px_#aa0000]">
             <h2 className="text-md font-bold mb-4">Suggest Features</h2>
-            <p className="mb-4 text-sm">Have an idea for a new feature or improvement? Share your suggestions on our <a href="" className="text-purple-600 dark:text-purple-400 underline">GitHub Discussions page</a>. We value your input!</p>
+            <p className="mb-4 text-sm">Have an idea for a new feature or improvement? Share your suggestions on our <a href="https://forms.microsoft.com/r/HZavR92nLN" className="text-purple-600 dark:text-purple-400 underline">here</a>. We value your input!</p>
           </div>
           <div className="bg-black/10 dark:bg-white/10 rounded-xl p-6 text-md font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-500/20 to-red-500/20 dark:hover:bg-gradient-to-r from-purple-900/60 to-red-900/30 transition-all hover:shadow-[0_0_40px_#c084ff,0_0_40px_#aa0000]">
               <h2 className="text-md font-bold mb-4">Request New Apps/Services</h2>  

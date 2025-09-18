@@ -51,6 +51,7 @@ export const apps = [
         id: "library",
         name: "E-Library",
         url: "https://egateway.chennai.vit.ac.in/home",
+        description: "Access to e-books, journals, research papers and more."
     },
     {
         id: "facultyreview",
@@ -76,13 +77,7 @@ export const apps = [
       url: "https://ffcsonthego.vatz88.in/#Chennai",
       description: "Plan your timetables with Mock FFCS"
     },
-    /*{
-      id: "new",
-      name: "Add Services",
-      url: "https://forms.microsoft.com/r/Jexc00E8nt",
-      description: "Help us grow by suggesting new services and apps that you use"
-    }
-    */{
+    {
         id: "ranks",
         name: "VITEEE Rank Predictor",
         url: "https://ranks.vhome.co.in/",

@@ -3,12 +3,13 @@ import { apps, calendar, examschedule, vitol, nptel } from '../data';
 import './index.css';
 import {
   PersonFeedback24Filled,
-  WeatherMoon16Filled,
+  WeatherMoon20Filled,
   WeatherSunny20Filled,
   Info24Filled,
   SearchSparkle24Filled,
   PersonFeedback20Filled,
-  Dismiss16Filled 
+  Dismiss16Filled ,
+  SearchSparkle24Color
 } from '@fluentui/react-icons';
 
 
@@ -122,36 +123,112 @@ const Home = () => {
     }, []);
 
 
+  // NAVBAR PILL LOGIC
+  // sliding pill state
+const [hoveredIndex, setHoveredIndex] = useState(null);
+const iconRefs = useRef([]);
+
+// tweak this if your pill text/padding changes
+const PILL_EXTRA = 120; // px of horizontal space the pill needs to avoid overlap
+
+
+
+
+// MAIN HTML RENDER
+
   return (
-    <div className="min-h-screen bg-white dark:bg-[rgb(34,34,34)] text-black dark:text-white transition-colors duration-500 relative">
 
-      {/* Header */}
+  <div className="min-h-screen bg-white dark:bg-[rgb(34,34,34)] text-black dark:text-white transition-colors duration-500 relative overflow-x-hidden">
+
+{/* Header */}
 <div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
-  {/* Left side */}
-    <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
+  {/* Logo */}
+  <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
 
-  {/* Right side */}
-    <div className="flex items-center space-x-8">
-      <div onClick={toggleTheme}>
-        {!darkMode ? (
-          <WeatherSunny20Filled className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition" />
-        ) : (
-          <WeatherMoon16Filled className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition" />
-        )}
-      </div>
+  <div className="flex items-center space-x-2">
+    {/* Dark/Light Mode Toggle */}
+    <button
+      onClick={() => toggleTheme()}
+      className="group flex items-center rounded-full cursor-pointer
+                 transition-all duration-300 ease-in-out
+                 bg-transparent px-4 py-2
+                 hover:bg-gradient-to-r 
+                 hover:from-purple-500 hover:to-red-500
+                 hover:dark:from-purple-800 hover:dark:to-red-800"
+    >
+      <span className="flex items-center space-x-2">
+        {/* Icon stays visible always */}
+        <span className="shrink-0">
+          {darkMode ? (
+            <WeatherMoon20Filled className="w-5 h-5 text-black dark:text-white group-hover:text-white" />
+          ) : (
+            <WeatherSunny20Filled className="w-5 h-5 text-black dark:text-white group-hover:text-white" />
+          )}
+        </span>
+        {/* Text Label only shows on hover */}
+        <span
+          className="max-w-0 opacity-0 overflow-hidden whitespace-nowrap
+                     group-hover:max-w-[120px] group-hover:opacity-100 
+                     transition-all duration-300 ease-in-out text-white font-semibold"
+        >
+          {darkMode ? "Dark Mode" : "Light Mode"}
+        </span>
+      </span>
+    </button>
 
-      <PersonFeedback20Filled
-        onClick={() => (window.location = '/#/contribute')}
-        className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition"
-      />
-    
- {/*   <Info24Filled
-        onClick={() => (window.location = '/#/about')}
-        className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition"
-      />
-*/}
-      </div> 
+    {/* Contribute */}
+    <button
+      onClick={() => window.location.href = '/#/contribute'}
+      className="group flex items-center rounded-full cursor-pointer
+                 transition-all duration-300 ease-in-out
+                 bg-transparent px-4 py-2
+                 hover:bg-gradient-to-r 
+                 hover:from-purple-500 hover:to-red-500
+                 hover:dark:from-purple-800 hover:dark:to-red-800"
+    >
+      <span className="flex items-center space-x-2">
+        <span className="shrink-0">
+          <PersonFeedback24Filled className="w-5 h-5 text-black dark:text-white group-hover:text-white" />
+        </span>
+        <span
+          className="max-w-0 opacity-0 overflow-hidden whitespace-nowrap
+                     group-hover:max-w-[120px] group-hover:opacity-100 
+                     transition-all duration-300 ease-in-out text-white font-semibold"
+        >
+          Contribute
+        </span>
+      </span>
+    </button>
+
+    {/* Info 
+    <button
+      onClick={() => window.location.href = '/#/about'}
+      className="group flex items-center rounded-full cursor-pointer
+                 transition-all duration-300 ease-in-out
+                 bg-transparent px-4 py-2
+                 hover:bg-gradient-to-r
+                 hover:from-purple-500 hover:to-red-500
+                  hover:dark:from-purple-800 hover:dark:to-red-800"
+    >
+      <span className="flex items-center space-x-2">
+        <span className="shrink-0">
+          <Info24Filled className="w-5 h-5 text-black dark:text-white group-hover:text-white" />
+        </span>
+        <span
+          className="max-w-0 opacity-0 overflow-hidden whitespace-nowrap
+                     group-hover:max-w-[120px] group-hover:opacity-100
+                      transition-all duration-300 ease-in-out text-white font-semibold"
+        >
+          About
+        </span>
+      </span>
+    </button> */}
   </div>
+</div>
+
+
+
+
 
       {/* Searchbar */}
  
@@ -163,14 +240,18 @@ const Home = () => {
               relative hover:shadow-[0_0_20px_#c080ff,0_0_20px_#aa0000] transition-all
              ${isFocused ? 'gradient-underline w-full' : 'w-80'}`}
               >
-            
-            <SearchSparkle24Filled className="mx-1 text-gray-500 dark:text-gray-400" />
+            {!isFocused ? (
+            <SearchSparkle24Filled className="w-6 h-6 mx-1 flex-shrink-0 text-gray-400 dark:text-gray-400" />   
+            ) : (
+            <SearchSparkle24Color className="w-6 h-6 mx-1 flex-shrink-0" />
+              )}
+
             <input
               type="text"
               placeholder="Search"
               autoComplete='none'
               autoFocus={true}
-              className="w-full mx-2 bg-transparent outline-none text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 border-b-2 border-transparent focus:outline-none"
+              className="w-full text-md mx-2 bg-transparent outline-none text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 border-b-2 border-transparent focus:outline-none"
               value={query}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
@@ -181,14 +262,17 @@ const Home = () => {
             
 
             {query && (
-              <button
-                onClick={clearSearch}
-                className="text-xl text-gray-500 hover:text-red-700 dark:hover:text-red-300 transition"
-                aria-label="Clear search"
-              >
-                <Dismiss16Filled className='mx-4'/>
-              </button>
+            <button
+            onMouseDown={(e) => e.preventDefault()}
+            onClick={clearSearch}
+            className="flex items-center justify-center w-6 h-6 mx-2 text-gray-500 hover:text-red-700 dark:hover:text-red-300 transition"
+            aria-label="Clear search"
+            type="button"
+            >
+            <Dismiss16Filled className="w-4 h-4 mx-1" />
+            </button> 
             )}
+
           </div>
 
           {/* Dropdown */}
