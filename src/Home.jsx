@@ -138,10 +138,12 @@ const PILL_EXTRA = 120; // px of horizontal space the pill needs to avoid overla
 
   return (
 
-  <div className="min-h-screen bg-white dark:bg-[rgb(34,34,34)] text-black dark:text-white transition-colors duration-500 relative overflow-x-hidden">
+  <div className="min-h-screen bg-white dark:bg-[rgb(34,34,34)] text-black dark:text-white transition-colors duration-500 ">
 
 {/* Header */}
-<div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
+<div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 
+                bg-gradient-to-r from-purple-400/20 to-red-400/20 
+                dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
   {/* Logo */}
   <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
 
