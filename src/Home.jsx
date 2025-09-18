@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';  // <-- import useRef
 import { apps, calendar, examschedule, vitol, nptel } from '../data';
 import './index.css';
+import { PersonFeedback24Filled, WeatherMoon16Filled, WeatherSunny20Filled, Info24Filled, SearchSparkle24Filled, PersonFeedback20Filled } from '@fluentui/react-icons';
+//import { ClosedCaptionOff28Regular, Dismiss16Filled, WeatherMoon20Filled, WeatherSunny20Filled } from '@fluentui/react-icons/fonts';
+
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -66,7 +69,7 @@ const Home = () => {
       if (selected?.type === 'app' && selected.url) {
         window.open(selected.url, '_blank');
       } else if (selected?.type === 'calendar') {
-        window.location.href = `/#/calendar/${id}`;
+        window.location.href = `/#/calendar/${selected.id}`;
       } else if (selected?.type === 'examschedule') {
         window.location.href = `/#/examschedule/${selected.id}`;
       } else if (selected?.type === 'nptel' && selected.url) {
@@ -116,15 +119,32 @@ const Home = () => {
     <div className="min-h-screen bg-white dark:bg-[rgb(34,34,34)] text-black dark:text-white transition-colors duration-500 relative">
 
       {/* Header */}
-      <div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
-        <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
-        <button
-          onClick={toggleTheme}
-          className="px-4 py-2 bg-transparent hover:text-purple-700 dark:bg-transparent hover:dark:text-purple-300 font-bold rounded-full hover:scale-110 dark:hover:scale-110 transition"
-        >
-          {!darkMode ? '☀' : '☾'}
-        </button>
+<div className="sticky top-0 z-50 backdrop-blur-xl flex justify-between items-center px-6 py-4 bg-gradient-to-r from-purple-400/20 to-red-400/20 dark:from-purple-900/20 dark:to-red-900/20 shadow-lt rounded-md">
+  {/* Left side */}
+    <h1 className="text-xl font-bold text-black dark:text-white">VHome</h1>
+
+  {/* Right side */}
+    <div className="flex items-center space-x-8">
+      <div onClick={toggleTheme}>
+        {!darkMode ? (
+          <WeatherSunny20Filled className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition" />
+        ) : (
+          <WeatherMoon16Filled className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition" />
+        )}
       </div>
+
+      <PersonFeedback20Filled
+        onClick={() => (window.location = '/#/contribute')}
+        className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition"
+      />
+    
+ {/*   <Info24Filled
+        onClick={() => (window.location = '/#/about')}
+        className="cursor-pointer hover:text-purple-700 hover:dark:text-purple-300 hover:scale-110 dark:hover:scale-110 transition"
+      />
+*/}
+      </div> 
+  </div>
 
       {/* Searchbar */}
  
@@ -136,11 +156,13 @@ const Home = () => {
               relative hover:shadow-[0_0_20px_#c080ff,0_0_20px_#aa0000] transition-all
              ${isFocused ? 'gradient-underline w-full' : 'w-80'}`}
               >
+            
+            <SearchSparkle24Filled className="mx-1 text-gray-500 dark:text-gray-400" />
             <input
               type="text"
               placeholder="Search"
               autoComplete='none'
-              autoFocus='true'
+              autoFocus={true}
               className="w-full mx-2 bg-transparent outline-none text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 border-b-2 border-transparent focus:outline-none"
               value={query}
               onChange={handleInputChange}
@@ -149,6 +171,7 @@ const Home = () => {
               onBlur={() => setIsFocused(false)}
               ref={inputRef}
             />
+            
 
             {query && (
               <button
@@ -156,7 +179,7 @@ const Home = () => {
                 className="text-xl text-gray-500 hover:text-red-700 dark:hover:text-red-300 transition"
                 aria-label="Clear search"
               >
-                &times;
+                <Dismiss16Filled className='mx-4'/>
               </button>
             )}
           </div>

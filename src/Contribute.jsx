@@ -52,7 +52,7 @@ export default function Contribute() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-black/10 dark:bg-white/10 rounded-xl p-6 text-md font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-500/20 to-red-500/20 dark:hover:bg-gradient-to-r from-purple-900/60 to-red-900/30 transition-all hover:shadow-[0_0_40px_#c084ff,0_0_40px_#aa0000]">
             <h2 className="text-md font-bold mb-4">Report Issues</h2>
-            <p className="mb-4 text-sm">Found a bug or an error on the site? Let us know by reporting it on our <a href="" className="text-purple-600 dark:text-purple-400 underline">GitHub Issues page</a>. Your feedback helps us improve!</p>
+            <p className="mb-4 text-sm">Found a bug or an error on the site? Let us know by reporting it on our <a href="https://github.com/kmahesh110606/VHome.web/issues" className="text-purple-600 dark:text-purple-400 underline">GitHub Issues page</a>. Your feedback helps us improve!</p>
           </div>
           <div className="bg-black/10 dark:bg-white/10 rounded-xl p-6 text-md font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-500/20 to-red-500/20 dark:hover:bg-gradient-to-r from-purple-900/60 to-red-900/30 transition-all hover:shadow-[0_0_40px_#c084ff,0_0_40px_#aa0000]">
             <h2 className="text-md font-bold mb-4">Suggest Features</h2>
@@ -60,7 +60,7 @@ export default function Contribute() {
           </div>
           <div className="bg-black/10 dark:bg-white/10 rounded-xl p-6 text-md font-medium hover:font-bold hover:scale-105 hover:rounded-2xl hover:bg-gradient-to-r from-purple-500/20 to-red-500/20 dark:hover:bg-gradient-to-r from-purple-900/60 to-red-900/30 transition-all hover:shadow-[0_0_40px_#c084ff,0_0_40px_#aa0000]">
               <h2 className="text-md font-bold mb-4">Request New Apps/Services</h2>  
-                <p className="mb-4 text-sm">Know of a useful app or service that isn't listed? Request its addition by opening an issue on our <a href="" className="text-purple-600 dark:text-purple-400 underline">GitHub Issues page</a>. Help us expand our offerings!</p>
+                <p className="mb-4 text-sm">Know of a useful app or service that isn't listed? Request its addition by filling this form. <a href="https://forms.microsoft.com/r/Jexc00E8nt" className="text-purple-600 dark:text-purple-400 underline">Click to Open form </a>. Help us expand our offerings!</p>
             </div> 
       </div>
       </div>
