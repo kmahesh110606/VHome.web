@@ -100,13 +100,13 @@ export const examschedule = [
     id: "vitol25",
     name: "VITOL OC 2025-26 Time Schedule",
     type: "calendar"
-  }
-  /*{
-    id: "fs25fat",
+  },
+  {
+    id: "fsfat25",
     name: "Fall Semester 2025-26 FAT Schedule",
     type: "examschedule"
   },
-  {
+  /*{
     id: "fs25intra",
     name: "Fall Semester 2025-26 Intra-Weekend Semester Schedule",
     type: "examschedule"
@@ -122,6 +122,11 @@ export const calendar = [
   {
     id: "fs25intra", 
     name: "Fall Semester Intra-Weekend 2025-26 Academic Calendar",
+    type: "calendar"
+  },
+  {
+    id: "ws25",
+    name: "Winter Semester 2026 Academic Calendar",
     type: "calendar"
   }
 ];
