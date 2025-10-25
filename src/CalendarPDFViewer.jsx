@@ -81,12 +81,14 @@ export default function PdfViewer() {
       </div>
 
       {/* PDF Viewer */}
-      <div className="flex-grow px-6 py-4 mt-6">
-        <div className="w-full h-[600px] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-md">
+      <div className="flex-grow px-6 py-4 mt-6 min-h-0 flex">
+        {/* Use flex so iframe expands to fill available vertical space */}
+        <div className="flex-1 min-h-0 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-md">
           <iframe
             src={isAndroid ? googleViewerUrl : pdfUrl}
             title={item.name}
-            className="w-full h-full"
+            className="flex-1 w-full h-full"
+            style={{ minHeight: 0 }}
             allowFullScreen
           />
         </div>
