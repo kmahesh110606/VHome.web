@@ -87,30 +87,46 @@ export const apps = [
 
 export const examschedule = [
   {
-    id: "fs25cat",
-    name: "Fall Semester 2025-26 CAT Schedule",
+    id: "II_Fall Semester 2025-26 FAT Schedule(I-Year B.Tech)-VITOL_26-09-2025",
+    name: "VITOL OC I-Year B.Tech Fall Semester 2025-26 FAT Schedule",
     type: "examschedule"
   },
   {
-    id: "fs25intramidterm",
-    name: "Fall Semester 2025-26 Intra-Weekend Mid-Term Schedule",
+    id: "I_Fall Semester 2025-26 FAT Schedule(All-Except I-Year B.Tech)-VITOL_25-09-2025",
+    name: "VITOL OC FAT Schedule Fall Semester 2025-26 (All Except I-Year B.Tech)",
     type: "examschedule"
   },
   {
-    id: "vitol25",
-    name: "VITOL OC 2025-26 Time Schedule",
-    type: "calendar"
+    id: "3_Fall Semester 2025-26 FAT Schedule(I-Year B.Tech)_25.09.2025",
+    name: "I-Year B.Tech Fall Semester 2025-26 FAT Schedule",
+    type: "examschedule"
   },
   {
-    id: "fsfat25",
-    name: "Fall Semester 2025-26 FAT Schedule",
+    id: "1_Fall Semester 2025-26 FAT Schedule -All (Except-I Year B.Tech & I-Year Law)_25-09-2025",
+    name: "Fall Semester 2025-26 FAT Schedule (All Except I-Year B.Tech & I-Year Law)",
     type: "examschedule"
   },
-  /*{
-    id: "fs25intra",
-    name: "Fall Semester 2025-26 Intra-Weekend Semester Schedule",
+  {
+    id: "2_Fall Semester 2025-26 FAT Schedule(I-Year Law-BLA, BLB & LLM)_25-09-2025",
+    name: "Fall Semester 2025-26 FAT Schedule (I-Year Law-BLA, BLB & LLM)",
     type: "examschedule"
-  }*/
+  },
+  {
+    id: "6_Fall Semester 2025-26-FAT Schedule(Industry Programmes)-16-10-2025",
+    name: "Fall Semester 2025-26 FAT Schedule (Industry Programmes)",
+    type: "examschedule"
+  },
+  {
+    id: "4_Fall Semester 2025-26-FAT Schedule(Research-Mandatory Courses)-24.10.2025_Revised",
+    name: "Fall Semester 2025-26 FAT Schedule (Research-Mandatory Courses)",
+    type: "examschedule"
+  },
+  {
+    id: "5_Fall Semester 2025-26-FAT Schedule(Research-Self Study Courses)-17.10.2025",
+    name: "Fall Semester 2025-26 FAT Schedule (Research-Self Study Courses)",
+    type: "examschedule"
+  },
+
 ];
 
 export const calendar = [
